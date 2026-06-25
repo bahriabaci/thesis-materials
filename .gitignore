@@ -1,0 +1,7 @@
+# Ignore all dotfiles and dot-directories (.DS_Store, .venv, .claudeprism, etc.)
+.*
+# ...but keep this file tracked
+!.gitignore
+
+# Source archive (kept local, not published)
+files/thesis/thesis.zip

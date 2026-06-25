@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Keep this page out of search engines (obscure, not private) -->
+<meta name="robots" content="noindex, nofollow">
+<title>Doktora Tezi Belgeleri — Bahri Abaci</title>
+
+
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#1c1c1d;
+    --muted:#5f6061;
+    --faint:#8b8c8d;
+    --line:#e7e8ea;
+    --line-strong:#d6d7da;
+    --accent:#0d9488;
+    --accent-ink:#0a6a60;
+    --tag-bg:#eceef0;
+    --card:#fbfbfc;
+    --radius:8px;
+    --maxw:1100px;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);}
+
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:clamp(1.5rem,4vw,3rem) clamp(1.1rem,4vw,2rem) 4rem;
+  }
+
+  /* ---- section labels ---- */
+  .row-label{
+    font-family:var(--mono);
+    font-size:.7rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--faint);
+    margin:2.2rem 0 .9rem;
+  }
+  .row-label:first-of-type{ margin-top:0; }
+
+  /* ---- grid rows ---- */
+  .row{ display:grid; gap:1rem; }
+  .row.one{ grid-template-columns:1fr; }
+  .row.two{ grid-template-columns:1fr 1fr; }
+  .row.three{ grid-template-columns:1fr 1fr 1fr; }
+
+  /* ---- card ---- */
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:1.15rem 1.2rem 1.2rem;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 1px 2px rgba(20,22,25,.05), 0 12px 26px -14px rgba(20,22,25,.12);
+    transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+  }
+  .card:hover{
+    border-color:var(--line-strong);
+    box-shadow:0 6px 24px -8px rgba(20,22,25,.18);
+    transform:translateY(-2px);
+  }
+
+  .tag{
+    align-self:flex-start;
+    font-family:var(--mono);
+    font-size:.66rem;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--muted);
+    background:var(--tag-bg);
+    border-radius:4px;
+    padding:.22rem .5rem;
+    margin-bottom:.75rem;
+  }
+
+  .card h2{
+    font-size:1.02rem;
+    font-weight:600;
+    line-height:1.35;
+    margin:0 0 .4rem;
+  }
+  .card.lead h2{ font-size:1.22rem; }
+
+  .card .desc{
+    font-size:.88rem;
+    color:var(--muted);
+    margin:0 0 .9rem;
+  }
+  .card .venue{
+    font-family:var(--mono);
+    font-size:.76rem;
+    color:var(--faint);
+    margin:0 0 .6rem;
+  }
+  .status{
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    align-self:flex-start;
+    font-size:.74rem;
+    font-weight:600;
+    color:var(--accent-ink);
+    margin:0;
+  }
+  .status::before{
+    content:"";
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--accent);
+  }
+  .badges{ display:flex; flex-wrap:wrap; gap:.35rem; margin:0 0 .9rem; }
+  .badge{
+    font-family:var(--mono);
+    font-size:.64rem;
+    letter-spacing:.03em;
+    color:var(--muted);
+    background:var(--tag-bg);
+    border-radius:4px;
+    padding:.18rem .42rem;
+  }
+  a.badge{ text-decoration:none; transition:background .15s ease,color .15s ease; }
+  a.badge:hover{ background:var(--line); color:var(--accent-ink); }
+
+  .spacer{ flex:1 1 auto; }
+
+  .actions{ display:flex; flex-wrap:wrap; gap:.5rem; }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    font-size:.8rem;
+    font-weight:500;
+    text-decoration:none;
+    padding:.45rem .75rem;
+    border-radius:6px;
+    border:1px solid var(--accent);
+    color:var(--accent);
+    background:transparent;
+    transition:background .15s ease,color .15s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{ background:var(--accent); color:#fff; }
+  .btn.solid{ background:var(--accent); color:#fff; }
+  .btn.solid:hover{ background:var(--accent-ink); border-color:var(--accent-ink); }
+  .btn svg{ width:14px; height:14px; }
+
+  .btn.muted{
+    border-color:var(--line-strong);
+    color:var(--muted);
+    cursor:default;
+  }
+  .btn.muted:hover{ background:transparent; color:var(--muted); }
+
+  /* ---- thesis summary ---- */
+  .summary{ font-size:.92rem; color:var(--ink); margin:.2rem 0 1rem; text-align:justify; }
+
+  /* ---- responsive ---- */
+  @media (max-width:680px){
+    .row.two, .row.three{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ===== ROW 1 — THESIS (title + summary + download) ===== -->
+  <div class="row-label">Tez</div>
+  <div class="row one">
+    <article class="card lead">
+      <span class="tag">Tez</span>
+      <h2>KYM Kamera Görüntüsü Kullanarak Kızılötesi Kameralarda Düzensizlik Giderme</h2>
+      <p class="summary">Kızılötesi görüntüleme sistemlerinde dedektör elemanları arasındaki farklılıklar, görüntü kalitesini düşüren <strong>sabit örüntü gürültüsüne</strong> yol açar. Bu tezde, eş zamanlı kaydedilen KYM (görünür bant) görüntüsünü yapısal rehber olarak kullanan, derin öğrenme tabanlı iki aşamalı <strong>SAFTA</strong> çerçevesi önerilmiştir.</p>
+      <div class="spacer"></div>
+      <div class="actions">
+        <a class="btn" href="files/thesis/thesis.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          PDF İndir
+        </a>
+      </div>
+    </article>
+  </div>
+
+  <!-- ===== ROW 2 — PROPOSAL + MONITORING ===== -->
+  <div class="row-label">Tez Önerisi ve İzleme</div>
+  <div class="row two">
+    <article class="card">
+      <span class="tag">Tez Önerisi</span>
+      <h2>Tez Önerisi</h2>
+      <p class="desc">Tez öneri belgesi ve savunma sunumu.</p>
+      <div class="spacer"></div>
+      <div class="actions">
+        <a class="btn" href="files/proposal/tez_oneri.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          Öneri PDF
+        </a>
+        <a class="btn" href="files/proposal/tez_oneri_sunu.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          Sunum
+        </a>
+      </div>
+    </article>
+
+    <article class="card">
+      <span class="tag">İzleme</span>
+      <h2>Tez İzleme Komitesi (TİK)</h2>
+      <p class="desc">Tez izleme komitesi ilerleme sunumları.</p>
+      <div class="spacer"></div>
+      <div class="actions">
+        <a class="btn" href="files/monitoring/monitoring_1.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          TİK 1
+        </a>
+        <a class="btn" href="files/monitoring/monitoring_2.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          TİK 2
+        </a>
+        <a class="btn" href="files/monitoring/monitoring_3.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          TİK 3
+        </a>
+        <a class="btn" href="files/monitoring/monitoring_4.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          TİK 4
+        </a>
+      </div>
+    </article>
+  </div>
+
+  <!-- ===== ROW 3 — RELATED PUBLICATIONS ===== -->
+  <div class="row-label">Tezle ilgili yayınlar</div>
+  <div class="row three">
+
+    <!-- 1) IEEE Sensors Journal — journal, most relevant to the thesis (accepted) -->
+    <article class="card">
+      <span class="tag">Dergi · IEEE</span>
+      <h2>RGB-guided infrared fixed-pattern noise estimation via sequential adaptive fusion</h2>
+      <p class="venue">IEEE Sensors Journal, 2026</p>
+      <p class="status">Kabul edildi · yakında yayımlanacak</p>
+      <div class="spacer"></div>
+      <div class="badges">
+        <a class="badge" href="https://wos-journal.info/journalid/13972" target="_blank" rel="noopener">SCIE</a>
+        <a class="badge" href="https://wos-journal.info/journalid/13972" target="_blank" rel="noopener">Q1 · Instruments &amp; Instrumentation</a>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://doi.org/10.1109/JSEN.2026.3707383" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Makaleyi Aç
+        </a>
+      </div>
+    </article>
+
+    <!-- 2) MDPI Sensors — journal, open access -->
+    <article class="card">
+      <span class="tag">Dergi · Açık Erişim</span>
+      <h2>Cross-modal scene prior for adaptive RGB-guided infrared column stripe noise removal</h2>
+      <p class="venue">Sensors (MDPI), 2026 · 26(12), 3638</p>
+      <div class="spacer"></div>
+      <div class="badges">
+        <a class="badge" href="https://wos-journal.info/journalid/14646" target="_blank" rel="noopener">SCIE</a>
+        <a class="badge" href="https://wos-journal.info/journalid/14646" target="_blank" rel="noopener">Q2 · Instruments &amp; Instrumentation</a>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://doi.org/10.3390/s26123638" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Makaleyi Aç
+        </a>
+      </div>
+    </article>
+
+    <!-- 3) IEEE MLSP — conference -->
+    <article class="card">
+      <span class="tag">Konferans · IEEE</span>
+      <h2>Integrating visible light for enhanced thermal imaging: Parameterized scene-based non-uniformity correction</h2>
+      <p class="venue">IEEE MLSP, 2024</p>
+      <div class="spacer"></div>
+      <div class="actions">
+        <a class="btn" href="https://ieeexplore.ieee.org/document/10734823" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Makaleyi Aç
+        </a>
+      </div>
+    </article>
+
+  </div>
+
+
+</div>
+</body>
+</html>
